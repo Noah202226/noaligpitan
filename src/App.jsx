@@ -8,9 +8,30 @@ import ContactForm from "./components/ContactForm";
 function App() {
   const [count, setCount] = useState(0);
 
+  const headingNav = document.getElementById("headingNav");
+  const content = document.getElementById("content");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      headingNav.style.opacity = "1";
+      headingNav.style.pointerEvents = "auto";
+    } else {
+      headingNav.style.opacity = "0";
+      headingNav.style.pointerEvents = "none";
+    }
+  });
+
+  // Adjust content padding to prevent overlap with fixed header
+  window.addEventListener("resize", () => {
+    const headerHeight = document.querySelector(
+      ".bg-white.shadow-md"
+    ).offsetHeight;
+    content.style.paddingTop = `${headerHeight}px`;
+  });
+
   return (
     <div className="">
-      <nav className="bg-red-800 p-3">
+      <nav className="p-3">
         <Navbar />
       </nav>
 

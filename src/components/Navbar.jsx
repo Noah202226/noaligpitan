@@ -2,7 +2,13 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto flex items-center justify-between bgre ">
+    <div className="container mx-auto flex items-center justify-between h-screen bg-gray-100 ">
+      <div class="flex justify-center items-center h-40 bg-white shadow-md">
+        <h1 class="text-2xl font-semibold">Your Logo</h1>
+      </div>
+      <div id="content" class="py-10 px-4">
+        {/* <!-- Your page content --> */}
+      </div>
       {/* Logo */}
       <div className="logo ">
         <img src="/vite.svg" alt="logo" />
@@ -53,6 +59,15 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
+
+      <div
+        id="headingNav"
+        class="fixed top-0 left-0 w-full bg-white shadow-md opacity-0 pointer-events-none"
+      >
+        <div class="flex justify-center items-center h-16 px-4">
+          <h1 class="text-2xl font-semibold">Your Logo</h1>
+        </div>
+      </div>
     </div>
   );
 };
