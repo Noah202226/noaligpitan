@@ -1,12 +1,30 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return <h1 className="text-2xl font-bold line-through">Hello world!</h1>;
+  return (
+    <div className="">
+      <nav className="bg-red-800 p-3">
+        <Navbar />
+      </nav>
+
+      <Skills />
+
+      <Projects />
+
+      <ContactForm />
+
+      <div className="bg-red-600 p-3">
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
 export default App;
